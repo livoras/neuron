@@ -1,0 +1,25 @@
+{
+  "name": "neuron",
+  "version": "1.0.0",
+  "description": "神经元实验",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^4.0.3",
+    "tslib": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livoras/neuron.git"
+  },
+  "author": "Livoras",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/livoras/neuron/issues"
+  },
+  "homepage": "https://github.com/livoras/neuron#readme"
+}
