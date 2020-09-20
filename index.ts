@@ -19,21 +19,32 @@ const main = () => {
   const n10 = new Neuron(INeuronType.NEGATIVE)
   const n11 = new Neuron(INeuronType.NEGATIVE)
 
+  const n12 = new Neuron(INeuronType.POSITIVE)
+  const n13 = new Neuron(INeuronType.POSITIVE)
+  const n14 = new Neuron(INeuronType.POSITIVE)
+  const n15 = new Neuron(INeuronType.NEGATIVE)
+  const n16 = new Neuron(INeuronType.POSITIVE)
+
   n1.to = [n2, n4, n10]
-  n2.to = [n5]
+  n2.to = [n5, n12]
   n3.to = [n2, n6, n11]
   n4.to = [n7]
   n5.to = [n8]
   n6.to = [n9]
   n7.to = [n8]
-  n8.to = []
+  n8.to = [n15]
   n9.to = [n8]
   n10.to = [n9]
   n11.to = [n7]
 
-  let neuronNet = [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11]
+  n12.to = [n13]
+  n13.to = [n14]
+  n14.to = [n16]
+  n15.to = [n16]
+
+  let neuronNet = [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16]
   n1.push(1)
-  n3.push(1)
+  // n3.push(1)
 
   let roundType: RoundType = RoundType.ACCEPT
   let i = 0
@@ -58,7 +69,7 @@ const main = () => {
     console.log('------------------------ ROUND -----------------------', i++)
     // console.log(neuronNet)
   }
-  console.log('END -> ', n8)
+  console.log('END -> ', n16)
 }
 
 
