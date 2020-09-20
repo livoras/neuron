@@ -6,8 +6,7 @@ export const enum INeuronType {
 export class Neuron {
   constructor(
     public type: INeuronType = INeuronType.POSITIVE,
-    public to: number[],
-    public getNeighbourNeuron: (i: number) => Neuron,
+    public to: Neuron[] = [],
   ) { }
 
   public tokens: any[] = []
@@ -33,10 +32,8 @@ export class Neuron {
   public send(): void {
     if (this.nextState === null) { return }
     this.state = this.nextState
-    this.to.forEach((isAdjacent: number, index: number) => {
-      if (isAdjacent === 0) { return }
-      const neightbour = this.getNeighbourNeuron(index)
-      neightbour.push(this.state)
+    this.to.forEach((to: Neuron) => {
+      to.push(this.state)
     })
   }
 
